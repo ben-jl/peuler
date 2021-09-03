@@ -1,6 +1,9 @@
 use std::convert::TryInto;
 
 pub fn primes_less_than_n(n:u64) -> Vec<u64> {
+    if n == 0 || n == 1 {
+        return vec![];
+    }
     let vsize :usize = (n-1).try_into().unwrap();
 
     let mut vec : Vec<bool> = Vec::with_capacity(vsize);

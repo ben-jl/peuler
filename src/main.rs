@@ -1,4 +1,4 @@
-mod lib;
+pub mod lib;
 
 fn main() {
     //p1_calc_multiples_of_3_and_5_below_n(1000);
