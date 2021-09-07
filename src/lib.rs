@@ -1,5 +1,11 @@
 use std::convert::TryInto;
 
+
+pub fn primes_less_than_n_2(n:u32) -> Vec<u32> {
+    let mut ps : Vec::<u32> = Vec::with_capacity(n as usize);
+    unimplemented!();
+}
+
 pub fn primes_less_than_n(n:u64) -> Vec<u64> {
     if n == 0 || n == 1 {
         return vec![];

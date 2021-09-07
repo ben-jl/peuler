@@ -8,7 +8,7 @@ fn primes(n: u64) -> Vec<u64> {
 fn sieve_basic_bencmark(c: &mut Criterion) {
     let mut group = c.benchmark_group("primes_basic_group");
     group.sample_size(10000);
-    group.bench_function("primes 1000000", |b| b.iter(|| primes(black_box(1000000))));
+    group.bench_function("primes 100", |b| b.iter(|| primes(black_box(100))));
     group.finish();
 }
 
