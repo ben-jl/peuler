@@ -6,7 +6,9 @@ fn main() {
     //p3_calc_largest_prime_factor_of_n(775146);
     //p10_calc_sum_of_primes_below_n(2000000);
 
-    p4_largest_palindrome_product(4);
+    //p14_get_longest_collatz_sequence_less_than_1000000();
+
+    p5_smallest_multiple_evenly_divided_by_1_through_20();
 }
 
 #[allow(dead_code)]
@@ -77,4 +79,34 @@ fn p4_largest_palindrome_product(d: u8) {
     }
 
     println!("{}", v[v.len() - 1]);
+}
+
+pub fn p14_get_longest_collatz_sequence_less_than_1000000() {
+    let mut memo = std::collections::HashMap::new();
+    let mut largest_seen_vec : Vec<u64> = Vec::new();
+    for i in (2..1000000) {
+        let val = lib::collatz(i, &memo);
+        if(val.len() > largest_seen_vec.len()) {
+            largest_seen_vec = val.clone();
+        }
+        memo.insert(i,val);
+        
+    }
+
+    println!("\nlongest seq ({}) {:?}",largest_seen_vec.len(), largest_seen_vec);
+}
+
+pub fn p5_smallest_multiple_evenly_divided_by_1_through_20() {
+    for c in 1.. {
+        for i in 1..20+1 {
+            if c % i != 0 {
+                break;
+            }
+
+            if i == 20 {
+                println!("{}", c);
+                return;
+            }
+        }
+    }
 }

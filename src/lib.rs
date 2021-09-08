@@ -37,3 +37,28 @@ pub fn primes_less_than_n(n:u64) -> Vec<u64> {
     }
     res
 }
+
+pub fn next_collatz(n: u64) -> u64 {
+    if n % 2 == 0 { n / 2 } else {3 * n + 1}
+}
+
+pub fn collatz(x:u64, memo: &std::collections::HashMap<u64, Vec<u64>>) -> Vec::<u64> {
+    let mut vals : Vec<u64> = vec![];
+    let mut curr = x;
+    while curr > 1 {
+        if let Some(v) = memo.get(&curr) {
+            
+            vals.append(&mut v.clone());
+            //println!("found rest after {} in memo...", curr);
+            return vals
+        } else {
+            vals.push(curr);
+            //println!("calculating next after {}...", curr);
+            curr = next_collatz(curr);
+            
+        }
+    }
+    vals.push(curr);
+    vals
+}
+
