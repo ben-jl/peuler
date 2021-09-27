@@ -1,10 +1,9 @@
 use std::convert::TryInto;
 
-
-fn main() {
-    println!("{:#?}", primes_less_than_n(20));
+pub fn main() -> () {
+    let ps = primes_less_than_n(104750);
+    println!("({}) {}",ps.len(), ps.last().unwrap());
 }
-
 
 pub fn primes_less_than_n(n:u64) -> Vec<u64> {
     if n == 0 || n == 1 {

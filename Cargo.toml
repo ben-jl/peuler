@@ -3,10 +3,19 @@ name = "peuler"
 version = "0.1.0"
 edition = "2018"
 
+[[bin]]
+name = "p6"
+[[bin]]
+name = "p7"
+[[bin]]
+name = "p18"
+[[bin]]
+name = "p11"
+[[bin]]
+name = "p8"
+[[bin]]
+name = "p15"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
-[dev-dependencies]
-criterion = "0.3"
-
